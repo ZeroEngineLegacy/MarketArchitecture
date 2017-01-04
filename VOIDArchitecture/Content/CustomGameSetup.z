@@ -1,3 +1,12 @@
+/************************************************************************************************************/
+/* Copyright 2016 DigiPen, All Rights Reserved                                                              */
+/* Last Update: 1/3/2016                                                                                    */
+/* Author: Zero Engine Team                                                                                 */
+/* Last updated by: Arend Danielek                                                                          */
+/* Class: CustomGameSetup                                                                                   */
+/* Brief: Creates, and configures viewport(s) spatial configuration on the screen based of player count.    */
+/************************************************************************************************************/
+
 class CustomGameSetup : ZilchComponent
 {
     //Archetype to be used to create the initial space for the game
@@ -9,7 +18,7 @@ class CustomGameSetup : ZilchComponent
     var DefaultLevel : Level;
     
     //The initial space created by this component
-    var DefaultSpace : Space = null;
+    var DefaultSpace : Space;
     
     function Initialize(init : CogInitializer)
     {
