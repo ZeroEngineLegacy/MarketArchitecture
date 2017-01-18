@@ -1,259 +1,226 @@
-Level = 
+[Version:1]
+Level 
 {
-	Cog = 
+	Cog 
 	{
-		LinkId = 
+		var Name = "LevelSettings"
+		var LinkId = 1
+		GravityEffect 
 		{
-			uint Id = 1,
-		},
-		Named = 
+			var Active = true
+			var WakeUpOnChange = false
+			var LocalSpaceDirection = true
+			var Strength = 10
+			var Direction = Vec3{0, -1, 0}
+		}
+		DragEffect 
 		{
-			string Name = "LevelSettings",
-		},
-		GravityEffect = 
+			var Active = true
+			var WakeUpOnChange = false
+			var LinearDamping = 0.200000003
+			var AngularDamping = 0.100000001
+			var LinearDrag = 0
+			var AngularDrag = 0.100000001
+		}
+		GridDraw 
 		{
-			bool Active = true,
-			bool WakeUpOnChange = false,
-			bool LocalSpaceDirection = true,
-			float Strength = 10,
-			Vec3 Direction = [0, -1, 0],
-		},
-		DragEffect = 
+			var Active = true
+			var HalfCellOffset = false
+			var CellSize = 1
+			var Axis = GridAxis.YAxis
+			var Lines = 100
+			var DrawAxisOrigins = true
+			var AlwaysDrawInEditor = true
+			var DrawInGame = true
+			var GridColor = Vec4{0.5, 0.5, 0.5, 0.400000006}
+			var GridHiLight = Vec4{0, 0, 0, 0.400000006}
+			var HilightInterval = 10
+			var FollowEditorCamera = false
+		}
+		ViewportConfiguration 
 		{
-			bool Active = true,
-			bool WakeUpOnChange = false,
-			float Drag = 0.699999988,
-			float AngularDrag = 0.100000001,
-		},
-		GridDraw = 
-		{
-			bool Active = true,
-			bool HalfCellOffset = false,
-			float CellSize = 1,
-			GridAxis Axis = YAxis,
-			int Lines = 100,
-			bool DrawAxisOrigins = true,
-			bool AlwaysDrawInEditor = true,
-			bool DrawInGame = true,
-			Vec4 GridColor = [0.5, 0.5, 0.5, 0.400000006],
-			Vec4 GridHiLight = [0, 0, 0, 0.400000006],
-			int HilightInterval = 10,
-			bool FollowEditorCamera = false,
-		},
-		ViewportConfiguration = 
-		{
-			string FullScreenViewportArchetype = "5802b03cf8d699b4:FullScreenViewport",
-			string HalfScreenViewportArchetype = "5802b023ff4bd4d6:HalfScreenViewport",
-			string QuarterScreenViewportArchetype = "5802b6d99f46b0b7:QuaterScreenViewport",
-			int DefaultPlayerCount = 4,
-			bool UseDefaultPlayerCount = true,
-		},
-	},
-	Cog = 
+			var FullScreenViewportArchetype = "5802b03cf8d699b4:FullScreenViewport"
+			var HalfScreenViewportArchetype = "5802b023ff4bd4d6:HalfScreenViewport"
+			var QuarterScreenViewportArchetype = "5802b6d99f46b0b7:QuaterScreenViewport"
+			var DefaultPlayerCount = 4
+			var UseDefaultPlayerCount = true
+		}
+	}
+	Cog 
 	{
-		LinkId = 
+		var Name = "EditorCamera"
+		var LinkId = 2
+		Transform 
 		{
-			uint Id = 2,
-		},
-		Named = 
+			var Translation = Vec3{3.0710175, 46.0254288, -58.6180649}
+			var Scale = Vec3{1, 1, 1}
+			var Rotation = Quat{-0.00854107551, 0.944910526, 0.32628119, 0.0247350223}
+		}
+		Camera 
 		{
-			string Name = "EditorCamera",
-		},
-		Transform = 
+			var Facing = Facing.NegativeZ
+			var NearPlane = 0.5
+			var FarPlane = 500
+			var PerspectiveMode = PerspectiveMode.Perspective
+			var FieldOfView = 45
+			var Size = 20
+		}
+		CameraViewport 
 		{
-			Vec3 Translation = [1.65067959, 104.116051, 2.1460638],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [-0.0211950354, 0.737502515, 0.674613953, 0.023170881],
-		},
-		Camera = 
-		{
-			Facing Facing = NegativeZ,
-			float NearPlane = 0.5,
-			float FarPlane = 500,
-			PerspectiveMode PerspectiveMode = Perspective,
-			float FieldOfView = 45,
-			float Size = 20,
-		},
-		CameraViewport = 
-		{
-			bool RenderInEditor = true,
-			bool RenderInGame = false,
-			bool RenderToViewport = true,
-			bool ForwardViewportEvents = false,
-			uint RenderOrder = 0,
-			Vec2 NormalizedSize = [1, 1],
-			Vec2 NormalizedOffset = [0, 0],
-			CogPath Camera = 
+			var RenderInEditor = true
+			var RenderInGame = false
+			var RenderToViewport = true
+			var ForwardViewportEvents = false
+			var RenderOrder = 0
+			var NormalizedSize = Vec2{1, 1}
+			var NormalizedOffset = Vec2{0, 0}
+			var Camera = CogPath
 			{
-				string Path = ".",
-				bool ErrorOnResolveToNull = false,
-				bool ErrorOnPathCantCompute = false,
-				bool ErrorOnDirectLinkFail = false,
-				bool UpdateCogOnPathChange = true,
-				bool UpdatePathOnCogChange = true,
-				bool UpdateCogOnInitialize = true,
-				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 2,
-				CogPathPreference PathPreference0 = CogRelative,
-				CogPathPreference PathPreference1 = SpaceRelative,
-				CogPathPreference PathPreference2 = Absolute,
-			},
-			CogPath Renderer = 
+				var Path = "."
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var ResolvedCog = 2
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var Renderer = CogPath
 			{
-				string Path = ".",
-				bool ErrorOnResolveToNull = false,
-				bool ErrorOnPathCantCompute = false,
-				bool ErrorOnDirectLinkFail = false,
-				bool UpdateCogOnPathChange = true,
-				bool UpdatePathOnCogChange = true,
-				bool UpdateCogOnInitialize = true,
-				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 2,
-				CogPathPreference PathPreference0 = CogRelative,
-				CogPathPreference PathPreference1 = SpaceRelative,
-				CogPathPreference PathPreference2 = Absolute,
-			},
-			Vec2 Resolution = [1280, 720],
-			ViewportScaling ViewportScaling = Fill,
-			Vec4 MarginColor = [0, 0, 0, 1],
-		},
-		DefaultRenderer = 
+				var Path = "."
+				var ErrorOnResolveToNull = false
+				var ErrorOnPathCantCompute = false
+				var ErrorOnDirectLinkFail = false
+				var UpdateCogOnPathChange = true
+				var UpdatePathOnCogChange = true
+				var UpdateCogOnInitialize = true
+				var ResolvedNullErrorOccurred = false
+				var ResolvedCog = 2
+				var PathPreference0 = CogPathPreference.CogRelative
+				var PathPreference1 = CogPathPreference.SpaceRelative
+				var PathPreference2 = CogPathPreference.Absolute
+			}
+			var Resolution = Vec2{1280, 720}
+			var ViewportScaling = ViewportScaling.Fill
+			var MarginColor = Vec4{0, 0, 0, 1}
+		}
+		DefaultRenderer 
 		{
-			Vec4 ClearColor = [0.125, 0.125, 0.125, 1],
-			bool DrawDebug = true,
-		},
-		EditorCameraController = 
+			var ClearColor = Vec4{0.125, 0.125, 0.125, 1}
+			var DrawDebug = true
+		}
+		EditorCameraController 
 		{
-			ControlMode ControlMode = Orbit,
-			float LookDistance = 91.105896,
-			float VerticalAngle = 1.48178518,
-			float HorizontalAngle = 9.48759365,
-			Vec3 LookTarget = [1.1422863, 13.3708372, 10.2288275],
-			float MoveSensitivity = 1,
-		},
-	},
-	Cog = 
+			var ControlMode = ControlMode.Orbit
+			var LookDistance = 74.5912094
+			var VerticalAngle = 0.66497004
+			var HorizontalAngle = 9.4771204
+			var LookTarget = Vec3{0, 0, 0}
+			var MoveSensitivity = 1
+		}
+	}
+	Cog 
 	{
-		LinkId = 
+		var Name = "1"
+		var LinkId = 3
+		Transform 
 		{
-			uint Id = 3,
-		},
-		Named = 
+			var Translation = Vec3{25, 0, 25}
+			var Scale = Vec3{1, 1, 1}
+			var Rotation = Quat{0, 0, 0, 1}
+		}
+		SpriteText 
 		{
-			string Name = "1",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [25, 0, 25],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		SpriteText = 
-		{
-			bool Visible = true,
-			bool ViewCulling = true,
-			bool VisibilityEvents = true,
-			string Material = "56dcc7b15f51207d:DefaultSpriteMaterial",
-			Vec4 VertexColor = [1, 1, 1, 1],
-			SpriteGeometryMode GeometryMode = ViewPlane,
-			string Font = "4e7bac697bec55c5:Verdana",
-			uint FontSize = 128,
-			string Text = "1",
-			TextAlign Align = Left,
-			float PixelsPerUnit = 64,
-		},
-	},
-	Cog = 
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var Material = "56dcc7b15f51207d:DefaultSpriteMaterial"
+			var VertexColor = Vec4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ViewPlane
+			var Font = "57343753bb4eaaec:NotoSans-Regular"
+			var FontSize = 128
+			var Text = "1"
+			var Align = TextAlign.Left
+			var PixelsPerUnit = 64
+		}
+	}
+	Cog 
 	{
-		LinkId = 
+		var Name = "2"
+		var LinkId = 4
+		Transform 
 		{
-			uint Id = 4,
-		},
-		Named = 
+			var Translation = Vec3{-25, 0, 25}
+			var Scale = Vec3{1, 1, 1}
+			var Rotation = Quat{0, 0, 0, 1}
+		}
+		SpriteText 
 		{
-			string Name = "2",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-25, 0, 25],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		SpriteText = 
-		{
-			bool Visible = true,
-			bool ViewCulling = true,
-			bool VisibilityEvents = true,
-			string Material = "56dcc7b15f51207d:DefaultSpriteMaterial",
-			Vec4 VertexColor = [1, 1, 1, 1],
-			SpriteGeometryMode GeometryMode = ViewPlane,
-			string Font = "4e7bac697bec55c5:Verdana",
-			uint FontSize = 128,
-			string Text = "2",
-			TextAlign Align = Left,
-			float PixelsPerUnit = 64,
-		},
-	},
-	Cog = 
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var Material = "56dcc7b15f51207d:DefaultSpriteMaterial"
+			var VertexColor = Vec4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ViewPlane
+			var Font = "57343753bb4eaaec:NotoSans-Regular"
+			var FontSize = 128
+			var Text = "2"
+			var Align = TextAlign.Left
+			var PixelsPerUnit = 64
+		}
+	}
+	Cog 
 	{
-		LinkId = 
+		var Name = "3"
+		var LinkId = 5
+		Transform 
 		{
-			uint Id = 5,
-		},
-		Named = 
+			var Translation = Vec3{-25, 0, -25}
+			var Scale = Vec3{1, 1, 1}
+			var Rotation = Quat{0, 0, 0, 1}
+		}
+		SpriteText 
 		{
-			string Name = "3",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-25, 0, -25],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		SpriteText = 
-		{
-			bool Visible = true,
-			bool ViewCulling = true,
-			bool VisibilityEvents = true,
-			string Material = "56dcc7b15f51207d:DefaultSpriteMaterial",
-			Vec4 VertexColor = [1, 1, 1, 1],
-			SpriteGeometryMode GeometryMode = ViewPlane,
-			string Font = "4e7bac697bec55c5:Verdana",
-			uint FontSize = 128,
-			string Text = "3",
-			TextAlign Align = Left,
-			float PixelsPerUnit = 64,
-		},
-	},
-	Cog = 
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var Material = "56dcc7b15f51207d:DefaultSpriteMaterial"
+			var VertexColor = Vec4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ViewPlane
+			var Font = "57343753bb4eaaec:NotoSans-Regular"
+			var FontSize = 128
+			var Text = "3"
+			var Align = TextAlign.Left
+			var PixelsPerUnit = 64
+		}
+	}
+	Cog 
 	{
-		LinkId = 
+		var Name = "4"
+		var LinkId = 6
+		Transform 
 		{
-			uint Id = 6,
-		},
-		Named = 
+			var Translation = Vec3{25, 0, -25}
+			var Scale = Vec3{1, 1, 1}
+			var Rotation = Quat{0, 0, 0, 1}
+		}
+		SpriteText 
 		{
-			string Name = "4",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [25, 0, -25],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		SpriteText = 
-		{
-			bool Visible = true,
-			bool ViewCulling = true,
-			bool VisibilityEvents = true,
-			string Material = "56dcc7b15f51207d:DefaultSpriteMaterial",
-			Vec4 VertexColor = [1, 1, 1, 1],
-			SpriteGeometryMode GeometryMode = ViewPlane,
-			string Font = "4e7bac697bec55c5:Verdana",
-			uint FontSize = 128,
-			string Text = "4",
-			TextAlign Align = Left,
-			float PixelsPerUnit = 64,
-		},
-	},
-},
+			var Visible = true
+			var ViewCulling = true
+			var VisibilityEvents = true
+			var Material = "56dcc7b15f51207d:DefaultSpriteMaterial"
+			var VertexColor = Vec4{1, 1, 1, 1}
+			var GeometryMode = SpriteGeometryMode.ViewPlane
+			var Font = "57343753bb4eaaec:NotoSans-Regular"
+			var FontSize = 128
+			var Text = "4"
+			var Align = TextAlign.Left
+			var PixelsPerUnit = 64
+		}
+	}
+}
