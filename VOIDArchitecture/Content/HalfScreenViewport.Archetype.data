@@ -1,78 +1,73 @@
-Cog = 
+[Version:1]
+Cog 
 {
-	LinkId = 
+	var Name = "Camera"
+	var LinkId = 1
+	Transform 
 	{
-		uint Id = 1,
-	},
-	Named = 
+		var Translation = Vec3{0, 0, 0}
+		var Scale = Vec3{1, 1, 1}
+		var Rotation = Quat{0.707106829, 0, 0, 0.707106829}
+	}
+	Camera 
 	{
-		string Name = "Camera",
-	},
-	Transform = 
+		var Facing = Facing.PositiveZ
+		var NearPlane = 0.5
+		var FarPlane = 100
+		var PerspectiveMode = PerspectiveMode.Orthographic
+		var FieldOfView = 45
+		var Size = 10
+	}
+	CameraViewport 
 	{
-		Vec3 Translation = [25, 31.7910538, 25],
-		Vec3 Scale = [1, 1, 1],
-		Quat Rotation = [0.707106829, 0, 0, 0.707106829],
-	},
-	Camera = 
-	{
-		Facing Facing = PositiveZ,
-		float NearPlane = 0.5,
-		float FarPlane = 100,
-		PerspectiveMode PerspectiveMode = Orthographic,
-		float FieldOfView = 45,
-		float Size = 50,
-	},
-	CameraViewport = 
-	{
-		bool RenderInEditor = false,
-		bool RenderInGame = true,
-		bool RenderToViewport = true,
-		bool ForwardViewportEvents = false,
-		uint RenderOrder = 0,
-		Vec2 NormalizedSize = [1, 0.5],
-		Vec2 NormalizedOffset = [0, 0],
-		CogPath Camera = 
+		var RenderInEditor = false
+		var RenderInGame = true
+		var RenderToViewport = true
+		var ForwardViewportEvents = false
+		var RenderOrder = 0
+		var NormalizedSize = Vec2{1, 0.5}
+		var NormalizedOffset = Vec2{0, 0}
+		var Camera = CogPath
 		{
-			string Path = ".",
-			bool ErrorOnResolveToNull = false,
-			bool ErrorOnPathCantCompute = false,
-			bool ErrorOnDirectLinkFail = false,
-			bool UpdateCogOnPathChange = true,
-			bool UpdatePathOnCogChange = true,
-			bool UpdateCogOnInitialize = true,
-			bool ResolvedNullErrorOccurred = false,
-			uint ResolvedCog = 1,
-			CogPathPreference PathPreference0 = CogRelative,
-			CogPathPreference PathPreference1 = SpaceRelative,
-			CogPathPreference PathPreference2 = Absolute,
-		},
-		CogPath Renderer = 
+			var Path = "."
+			var ErrorOnResolveToNull = false
+			var ErrorOnPathCantCompute = false
+			var ErrorOnDirectLinkFail = false
+			var UpdateCogOnPathChange = true
+			var UpdatePathOnCogChange = true
+			var UpdateCogOnInitialize = true
+			var ResolvedNullErrorOccurred = false
+			var ResolvedCog = 1
+			var PathPreference0 = CogPathPreference.CogRelative
+			var PathPreference1 = CogPathPreference.SpaceRelative
+			var PathPreference2 = CogPathPreference.Absolute
+		}
+		var Renderer = CogPath
 		{
-			string Path = ".",
-			bool ErrorOnResolveToNull = false,
-			bool ErrorOnPathCantCompute = false,
-			bool ErrorOnDirectLinkFail = false,
-			bool UpdateCogOnPathChange = true,
-			bool UpdatePathOnCogChange = true,
-			bool UpdateCogOnInitialize = true,
-			bool ResolvedNullErrorOccurred = false,
-			uint ResolvedCog = 1,
-			CogPathPreference PathPreference0 = CogRelative,
-			CogPathPreference PathPreference1 = SpaceRelative,
-			CogPathPreference PathPreference2 = Absolute,
-		},
-		Vec2 Resolution = [1280, 720],
-		ViewportScaling ViewportScaling = Fill,
-		Vec4 MarginColor = [0, 0, 0, 1],
-	},
-	DefaultRenderer = 
+			var Path = "."
+			var ErrorOnResolveToNull = false
+			var ErrorOnPathCantCompute = false
+			var ErrorOnDirectLinkFail = false
+			var UpdateCogOnPathChange = true
+			var UpdatePathOnCogChange = true
+			var UpdateCogOnInitialize = true
+			var ResolvedNullErrorOccurred = false
+			var ResolvedCog = 1
+			var PathPreference0 = CogPathPreference.CogRelative
+			var PathPreference1 = CogPathPreference.SpaceRelative
+			var PathPreference2 = CogPathPreference.Absolute
+		}
+		var Resolution = Vec2{1280, 720}
+		var ViewportScaling = ViewportScaling.Fill
+		var MarginColor = Vec4{0, 0, 0, 1}
+	}
+	DefaultRenderer 
 	{
-		Vec4 ClearColor = [0, 0, 0, 1],
-		bool DrawDebug = true,
-	},
-	SoundListener = 
+		var ClearColor = Vec4{0, 0, 0, 1}
+		var DrawDebug = true
+	}
+	SoundListener 
 	{
-		bool Active = true,
-	},
-},
+		var Active = true
+	}
+}
