@@ -4,7 +4,7 @@
 /* Author: Zero Engine Team                                                                                 */
 /* Last updated by: Arend Danielek                                                                          */
 /* Class: CustomGameSetup                                                                                   */
-/* Brief: Creates, and configures viewport(s) spatial configuration on the screen based of player count.    */
+/* Brief: When added to the GameSession Archetype, this sets up the initial space and level.                */
 /************************************************************************************************************/
 
 class CustomGameSetup : ZilchComponent
