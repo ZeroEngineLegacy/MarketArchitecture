@@ -5,13 +5,12 @@ Cog
 	var LinkId = 1
 	Transform 
 	{
-		var Translation = Vec3{0, 0, 0}
-		var Scale = Vec3{1, 1, 1}
-		var Rotation = Quat{0.707106829, 0, 0, 0.707106829}
+		var Translation = Real3{0, 0, 0}
+		var Scale = Real3{1, 1, 1}
+		var Rotation = Quaternion{-0.707106829, 0, 0, 0.707106829}
 	}
 	Camera 
 	{
-		var Facing = Facing.PositiveZ
 		var NearPlane = 0.5
 		var FarPlane = 100
 		var PerspectiveMode = PerspectiveMode.Orthographic
@@ -25,8 +24,8 @@ Cog
 		var RenderToViewport = true
 		var ForwardViewportEvents = false
 		var RenderOrder = 0
-		var NormalizedSize = Vec2{1, 0.5}
-		var NormalizedOffset = Vec2{0, 0}
+		var NormalizedSize = Real2{1, 0.5}
+		var NormalizedOffset = Real2{0, 0}
 		var Camera = CogPath
 		{
 			var Path = "."
@@ -57,13 +56,13 @@ Cog
 			var PathPreference1 = CogPathPreference.SpaceRelative
 			var PathPreference2 = CogPathPreference.Absolute
 		}
-		var Resolution = Vec2{1280, 720}
+		var Resolution = Real2{1280, 720}
 		var ViewportScaling = ViewportScaling.Fill
-		var MarginColor = Vec4{0, 0, 0, 1}
+		var MarginColor = Real4{0, 0, 0, 1}
 	}
 	DefaultRenderer 
 	{
-		var ClearColor = Vec4{0, 0, 0, 1}
+		var ClearColor = Real4{0, 0, 0, 1}
 		var DrawDebug = true
 	}
 	SoundListener 
