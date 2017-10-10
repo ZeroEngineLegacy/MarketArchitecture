@@ -1,6 +1,6 @@
 ContentLibrary = 
 {
-	string Name = "VOIDArchitecture",
+	string Name = "MarketArchitecture",
 	uint64 LibraryId = 5802bf893323f49d,
 	string SourceControlType = "",
 	bool ReadOnly = false,
